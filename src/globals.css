@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply text-slate-900;
+}
+
+.rich-text-copy {
+  @apply w-full lg:w-[720px] lg:mx-auto px-6 lg:px-0;
+}
+
+.rich-text-heading {
+  @apply w-full lg:w-[720px] lg:mx-auto px-6 lg:px-0 font-bold mb-1;
+}
+
+.loading-background {
+  @apply bg-gray-300;
+}
+
+.introduction-letter {
+  @apply bg-black text-white mx-4 lg:w-1/2 lg:mx-auto rounded-xl p-6 md:p-12 text-xl flex flex-col justify-between;
+}

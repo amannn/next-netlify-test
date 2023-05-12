@@ -1,0 +1,41 @@
+{
+  "Home": {
+    "Metadata": {
+      "title": "Metadata titolo",
+      "description": "Metadata descrizione."
+    },
+    "Hero": {
+      "title": "Un blog incredibile"
+    },
+    "Featured": {
+      "title": "Pensieri recenti",
+      "error1": "Errore pazzesco..."
+    },
+    "AboutUs": {
+      "title": "Chi Siamo",
+      "content": "Siamo dei blogger.",
+      "cta": "Scopri di più"
+    }
+  },
+  "AboutUs": {
+    "Metadata": {
+      "title": "About us Titolo",
+      "description": "About us Descrizione"
+    },
+    "title": "Questa è la pagina su chi siamo"
+  },
+  "Post": {
+    "writtenBy": "Scritto Da"
+  },
+  "Global": {
+    "LocaleSwitch": {
+      "helpText": "cambia lingua a italiano"
+    },
+    "Footer": {
+      "message": "Iscriviti alla newsletter",
+      "inputPlaceholder": "Inserisci Email",
+      "inputError": "Perfavore inserisci una mail valida",
+      "cta": "Iscirviti Ora"
+    }
+  }
+}

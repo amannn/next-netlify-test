@@ -1,0 +1,41 @@
+{
+  "Home": {
+    "Metadata": {
+      "title": "Metadata title",
+      "description": "Metadata description."
+    },
+    "Hero": {
+      "title": "Hero Title"
+    },
+    "Featured": {
+      "title": "Our recent thoughts",
+      "error1": "An error happened while fetching featured post..."
+    },
+    "AboutUs": {
+      "title": "About Us",
+      "content": "Who we are.",
+      "cta": "Find out more"
+    }
+  },
+  "AboutUs": {
+    "Metadata": {
+      "title": "About us Title",
+      "description": "About us Description"
+    },
+    "title": "This is an about us page"
+  },
+  "Post": {
+    "writtenBy": "Written By"
+  },
+  "Global": {
+    "LocaleSwitch": {
+      "helpText": "switch to italian language"
+    },
+    "Footer": {
+      "message": "Subscribe to the newsletter",
+      "inputPlaceholder": "Enter Email",
+      "inputError": "Please enter a valid email",
+      "cta": "Subscribe Now"
+    }
+  }
+}
