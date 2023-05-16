@@ -1,37 +1,43 @@
-import "../../globals.css";
-
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { useLocale } from "next-intl";
+import { createTranslator, NextIntlClientProvider } from "next-intl";
+import { ReactNode } from "react";
 
-import { crimsonText } from "utils/fonts";
-import { AppLocale } from "types/global";
+type Props = {
+  children: ReactNode;
+  params: { locale: string };
+};
 
-interface Props {
-  children: React.ReactNode;
-  params: { locale: AppLocale };
-}
+export async function generateMetadata({ params: { locale } }: Props) {
+  const messages = (await import(`../../messages/${locale}.json`)).default;
 
-export async function generateMetadata(): Promise<Metadata> {
+  // You can use the core (non-React) APIs when you have to use next-intl
+  // outside of components. Potentially this will be simplified in the future
+  // (see https://next-intl-docs.vercel.app/docs/next-13/server-components).
+  const t = createTranslator({ locale, messages });
+
   return {
-    title: {
-      template: "%s | Next Netlify",
-      default: "Next on Netlify",
-    },
+    title: t("Home.Hero.title"),
   };
 }
 
-export default function LocaleLayout({ children, params }: Props) {
-  const locale = useLocale();
-
-  // Show a 404 error if the user requests an unknown locale
-  if (params.locale !== locale) {
+export default async function LocaleLayout({
+  children,
+  params: { locale },
+}: Props) {
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
     notFound();
   }
 
   return (
-    <html lang={locale} style={crimsonText.style}>
-      <body>{children}</body>
+    <html className="h-full" lang={locale}>
+      <body>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

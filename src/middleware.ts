@@ -13,5 +13,3 @@ export const config = {
   // Skip all paths that should not be internationalized
   matcher: ["/((?!icons|_next/static|_next/image|sitemap.xml|favicon.ico).*)"],
 };
-
-// @TODO Checkout https://docs.netlify.com/integrations/frameworks/next-js/middleware/#next-js-advanced-middleware-with-the-netlify-next-library
