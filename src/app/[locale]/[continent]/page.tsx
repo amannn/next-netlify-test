@@ -1,3 +1,5 @@
+'use client';
+
 import { AppLocale } from "types/global";
 
 const ContinentPage = () => {

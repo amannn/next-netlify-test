@@ -1,3 +1,5 @@
+'use client'
+
 import { Hero } from "components/Hero";
 import { FeaturedPostsSection } from "components/FeaturedPostsSection/FeaturedPostsSection";
 import { AboutUsSection } from "components/AboutUsSection";

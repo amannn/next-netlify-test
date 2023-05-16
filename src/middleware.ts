@@ -1,15 +1,18 @@
 import createMiddleware from "next-intl/middleware";
+import { NextRequest } from "next/server";
 
-export default createMiddleware({
-  // A list of all locales that are supported
+const intlMiddleware = createMiddleware({
   locales: ["en", "it"],
-
-  // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
   defaultLocale: "en",
 });
+
+export function middleware(req: NextRequest) {
+  console.log('middleware processing '+ req.nextUrl.href);
+  return intlMiddleware(req);
+}
 
 // See "Matching Paths" below to learn more
 export const config = {
   // Skip all paths that should not be internationalized
-  matcher: ["/((?!icons|_next/static|_next/image|sitemap.xml|favicon.ico).*)"],
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };
